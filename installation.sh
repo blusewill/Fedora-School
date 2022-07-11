@@ -34,11 +34,11 @@ dnf install arandr -y
 
 # Install Mousepad (Something like notepad)
 
-dnf install mousepad
+dnf install mousepad -y
 
 # Install Libreoffice (Open Source Office Suite)
 
-dnf install libreoffice
+dnf install libreoffice -y
 
 # Music/Video Player
 
