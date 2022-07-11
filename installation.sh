@@ -2,7 +2,7 @@
 
 # Check if Script is Run as Root
 if [[ $EUID -ne 0 ]]; then
-  echo "You must be a root user to run this script, please run sudo ./install.sh" 2>&1
+  echo "You must be a root user to run this script, please run sudo ./installation.sh" 2>&1
   exit 1
 fi
 
@@ -10,12 +10,8 @@ fi
 dnf update -y
 
 # Enable RPM Fusion
-wget https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm
-wget https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-36.noarch.rpm
-dnf install ./rpmfusion-free-release-36.noarch.rpm -y
-dnf install ./rpmfusion-nonfree-release-36.noarch.rpm -y
-rm rpmfusion-free-release-36.noarch.rpm rpmfusion-nonfree-release-36.noarch.rpm
-
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # Install sddm
 dnf install sddm -y 
 
