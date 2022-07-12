@@ -6,14 +6,26 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+# Asking for Username for Config File
+echo Please Type your username
+read username
+echo "your username is $username"
+echo Installation is going to Start in 10 Seconds if this is not your username please press CTRL+C
+sleep 10
+
+
 # Update System
 dnf update -y
+
 
 # Enable RPM Fusion
 dnf install \
 https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf install \
 https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# Install git
+dnf install git -y
 
 # Install sddm
 dnf install sddm -y 
@@ -43,6 +55,16 @@ dnf install mousepad -y
 
 dnf install libreoffice -y
 
+#Drawing Application
+
+# Krita
+
+dnf install krita -y
+
+# GIMP
+
+# dnf install gimp
+
 # Music/Video Player
 
 # VLC
@@ -70,6 +92,9 @@ dnf install dnf-plugins-core -y
 dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 dnf install brave-browser -y
+
+#Copy Config File
+cp -rf /home/$username/fedora-school/dotconfig/* /home/$username/.config/
 
 #Enable Graphical Mode Boot
 
