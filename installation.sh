@@ -103,6 +103,7 @@ git clone https://gitlab.com/isseigx/simplicity-sddm-theme
 cp -rf ./simplicity-sddm-theme/simplicity /usr/share/sddm/themes
 rm /etc/sddm.conf
 mv /home/$username/fedora-school/config/sddm.conf /etc/sddm.conf
+mv /home/$username/Fedora-School/config/sddm.conf /etc/sddm.conf
 
 
 #Enable Graphical Mode Boot
