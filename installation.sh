@@ -95,6 +95,15 @@ dnf install brave-browser -y
 
 #Copy Config File
 cp -rf /home/$username/fedora-school/dotconfig/* /home/$username/.config/
+cp -rf /home/$username/Fedora-School/dotconfig/* /home/$username/.config/
+
+
+#Install sddm theme
+git clone https://gitlab.com/isseigx/simplicity-sddm-theme
+cp -rf ./simplicity-sddm-theme/simplicity /usr/share/sddm/themes
+rm /etc/sddm.conf
+mv /home/$username/fedora-school/config/sddm.conf /etc/sddm.conf
+
 
 #Enable Graphical Mode Boot
 
