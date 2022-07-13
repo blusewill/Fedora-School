@@ -99,7 +99,7 @@ cp -rf /home/$username/fedora-school/dotconfig/* /home/$username/.config/
 cp -rf /home/$username/Fedora-School/dotconfig/* /home/$username/.config/
 
 
-#Install sddm theme
+#Install sddm theme (simplicity-theme)
 git clone https://gitlab.com/isseigx/simplicity-sddm-theme
 cp -rf ./simplicity-sddm-theme/simplicity /usr/share/sddm/themes
 rm /etc/sddm.conf
