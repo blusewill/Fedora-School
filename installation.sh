@@ -7,6 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Asking for Username for Config File
+
 echo Please Type your username
 read username
 echo "your username is $username"
