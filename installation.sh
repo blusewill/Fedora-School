@@ -32,7 +32,7 @@ dnf install git -y
 dnf install sddm -y 
 
 # Install KDE Plasma
-dnf install plasma-dekstop -y
+dnf install plasma-desktop -y
 
 # Install Kitty (Terminal Emulator)
 dnf install kitty -y
